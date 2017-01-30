@@ -1,7 +1,19 @@
 ﻿@{
     ViewBag.Title = "About";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
+<h2>Info about this site</h2>
 
-<p>Use this area to provide additional information.</p>
+@if (Request.IsAuthenticated)
+{
+    <h4>Thank you for using my web application! If you want to report a bug or you have some suggestions, contact me. I appreciate it!</h4>
+}
+<p>
+    This site allow registered users to share one common chat with public history.
+    Administrator can mute users and delete messages.<br />
+    This is my small project to have some practice with asp.net, its identity system and SignalR
+</p>
+@if (!Request.IsAuthenticated)
+{
+    <h4>If you are interested in this project, you need to register to access the chat for users</h4>
+}
+

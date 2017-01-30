@@ -1,0 +1,20 @@
+Home:
+	-Authorized: Chat
+	-Non-Authorized: redirect to About
+About:
+	-Authorized: Thank you for using my app...
+	-Non-Authorized: Show info about app with link to register/login
+Contact:
+	Show my contacts
+Register:
+	-Authorized: redirect to Account manage
+	-Non-Authorized: register form
+Login:
+	-Authorized: redirect to Account manage
+	-Non-Authorized: login form	
+Account manage:
+	-Authorized: account settings
+	-Non-Authorized: ERROR???
+Control:
+	-Authorized: chat settings
+	-Non-Authorized: ERROR???
