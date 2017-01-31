@@ -49,9 +49,9 @@ namespace SimpleChatSite.Models
     public class LoginViewModel
     {
         [Required]
-        [Display(Name = "Email")]
-        [EmailAddress]
-        public string Email { get; set; }
+        [Display(Name = "Login")]
+        [RegularExpression("([a-zA-Z0-9]+)", ErrorMessage = "Login can contain only alphabets and numbers")]
+        public string Login { get; set; }
 
         [Required]
         [DataType(DataType.Password)]
@@ -64,6 +64,16 @@ namespace SimpleChatSite.Models
 
     public class RegisterViewModel
     {
+        //[Required]
+        //[Display(Name = "Login")]
+        //[RegularExpression("([a-zA-Z0-9]+)", ErrorMessage = "Login can contain only alphabets and numbers")]
+        //public string Login { get; set; }
+
+        //[Required]
+        //[Display(Name = "Name")]        
+        //[RegularExpression("[/w/s]+", ErrorMessage = "Name can contain only alphabets and space")]
+        //public string Name { get; set; }
+
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]
