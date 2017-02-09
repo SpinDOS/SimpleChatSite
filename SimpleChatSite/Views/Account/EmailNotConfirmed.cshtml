@@ -1,0 +1,12 @@
+﻿@model SimpleChatSite.Models.EmailNotConfirmedViewModel
+@{
+    ViewBag.Title = "Email is not confirmed";
+}
+
+<h2>Email is not confirmed</h2>
+<p>
+    You can not sign in because your email still is not confirmed.<br/>
+    Please check your email to find confirmation link.<br/>
+    If you can not find confirmation message, click @Html.ActionLink("here to send new one", "ResendEmailConfirmation", new {email = Model.Email})
+</p>
+

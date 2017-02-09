@@ -199,12 +199,17 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Filters\DenyAuthentificatedAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201701310026027_Some initial changes.cs" />
     <Compile Include="Migrations\201701310026027_Some initial changes.Designer.cs">
       <DependentUpon>201701310026027_Some initial changes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702070155164_change user class.cs" />
+    <Compile Include="Migrations\201702070155164_change user class.Designer.cs">
+      <DependentUpon>201702070155164_change user class.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -251,18 +256,13 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
-    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
-    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
     <Content Include="Views\Account\ForgotPassword.cshtml" />
     <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Account\ResetPassword.cshtml" />
     <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
-    <Content Include="Views\Account\SendCode.cshtml" />
-    <Content Include="Views\Account\VerifyCode.cshtml" />
     <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
     <Content Include="Views\Manage\ChangePassword.cshtml" />
     <Content Include="Views\Manage\Index.cshtml" />
@@ -273,6 +273,10 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Shared\DeniedForAuthentificated.cshtml" />
+    <Content Include="Views\Account\EmailConfirmationSent.cshtml" />
+    <Content Include="Views\Account\EmailNotConfirmed.cshtml" />
+    <Content Include="Views\Account\RegisterEmailConfirmationSent.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -288,6 +292,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201701310026027_Some initial changes.resx">
       <DependentUpon>201701310026027_Some initial changes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702070155164_change user class.resx">
+      <DependentUpon>201702070155164_change user class.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
