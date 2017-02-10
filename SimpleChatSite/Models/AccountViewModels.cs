@@ -75,9 +75,4 @@ namespace SimpleChatSite.Models
         [Display(Name = "Email")]
         public string Email { get; set; }
     }
-
-    public class EmailNotConfirmedViewModel
-    {
-        public string Email { get; set; }
-    }
 }

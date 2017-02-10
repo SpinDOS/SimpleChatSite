@@ -87,7 +87,8 @@ namespace SimpleChatSite.Controllers
                     if (user.EmailConfirmed)
                         return RedirectToLocal(returnUrl);
                     AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
-                    return View("EmailNotConfirmed", new EmailNotConfirmedViewModel() {Email = user.Email});
+                    ViewBag.Email = user.Email;
+                    return View("EmailNotConfirmed");
                 case SignInStatus.LockedOut:
                     return View("Lockout");
                 case SignInStatus.Failure:
@@ -120,6 +121,7 @@ namespace SimpleChatSite.Controllers
                     try
                     {
                         await SendConfirmationEmail(user.Id);
+                        ViewBag.Email = user.Email;
                         return View("RegisterEmailConfirmationSent");
                     }
                     catch (SmtpException)
@@ -144,6 +146,7 @@ namespace SimpleChatSite.Controllers
             {
                 return View("Error");
             }
+            ViewBag.Email = email;
             var user = await UserManager.FindByEmailAsync(email);
             if (user == null || user.EmailConfirmed)
             {
